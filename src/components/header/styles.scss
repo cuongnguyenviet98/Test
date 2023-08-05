@@ -1,0 +1,26 @@
+@import '../../styles/mixins';
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 160px;
+  background: #414141;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  .header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    .header-button {
+      margin-left: 24px;
+      display: flex;
+      align-items: center;
+      border: unset;
+      background: transparent;
+      box-shadow: none;
+      span {
+        @include font-face( normal, 300, 16px, 23px, #FFF);
+      }
+    }
+  }
+}
