@@ -5,16 +5,14 @@ import { useHistory } from 'react-router-dom';
 import { ChallengeIcon, InfoIcon, LogoIcon, MemoIcon, MenuIcon } from '../../static/image/svg';
 import './styles.scss';
 
+
 const Header = (props) => {
   const history = useHistory();
 
-  const onGoBack = () => {
-    history.push('/');
-  };
 
   return (
    <div className='main-header'>
-      <img onClick={onGoBack} src={LogoIcon} alt="Logo Icon"/>
+      <img className='logo-img' onClick={() => history.push('/')} src={LogoIcon} alt="Logo Icon"/>
       <div className='header-right'>
       <Button className='header-button' children="自分の記録" icon={<img src={MemoIcon} alt="Memo Icon" />} />
       <Button className='header-button' children="チャレンジ" icon={<img src={ChallengeIcon} alt="Challenge Icon" />} />
@@ -25,6 +23,12 @@ const Header = (props) => {
   );
 };
 
+Header.defaultProps = {
+  onGoBack: () => {},
+};
 
+Header.propTypes = {
+  onGoBack: PropTypes.func,
+};
 
 export default Header;

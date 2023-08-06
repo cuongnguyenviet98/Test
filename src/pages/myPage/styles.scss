@@ -1,0 +1,83 @@
+@import '../../styles/mixins';
+@import '../../styles/custom-variables';
+
+.my-page {
+  position: relative;
+  .top-my-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 312px;
+
+    .left-my-page {
+      width: 40%;
+      height: 100%;
+      background-image: url("../../static//image/jpg/d01.jpg");
+      background-size: cover;
+      position: relative;
+      opacity: 0.7;
+
+      .chart-custom {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .right-my-page {
+      width: 60%;
+      height: 100%;
+    }
+  }
+  .bottom-my-page {
+    padding: 24px 160px 64px 160px;
+    .meals {
+      margin-bottom: 24px;
+      text-align: center;
+      img {
+        margin-right: 64px;
+      }
+    }
+    .meals-content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 8px;
+      margin-bottom: 28px;
+      .meal-item {
+        position: relative;
+        img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+        }
+        span {
+          @include font-face( normal, 400, 15px, 18px, $white);
+          padding: 7px 10px 7px 8px;
+          background: $bright-orange;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+    .button-box {
+      text-align: center;
+      .more-button {
+        width: 296px;
+        height: 56px;
+        background: linear-gradient(33deg, #FFCC21 0%, #FF963C 100%);
+        border: unset;
+        border-radius: 8px;
+        @include font-face( normal, 300, 18px, 26px, $white);
+        cursor: pointer;
+      }
+    }
+  }
+  .scroll-to-top-button {
+    position: absolute;
+    bottom: 50px;
+    right: 80px;
+    cursor: pointer;
+  }
+}

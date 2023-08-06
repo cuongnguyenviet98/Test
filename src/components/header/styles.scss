@@ -1,12 +1,16 @@
 @import '../../styles/mixins';
+@import '../../styles/custom-variables';
 
 .main-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 160px;
-  background: #414141;
+  background: $dark-gray;
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  .logo-img {
+    cursor: pointer;
+  }
   .header-right {
     display: flex;
     align-items: center;
@@ -19,7 +23,7 @@
       background: transparent;
       box-shadow: none;
       span {
-        @include font-face( normal, 300, 16px, 23px, #FFF);
+        @include font-face( normal, 300, 16px, 23px, $white);
       }
     }
   }
