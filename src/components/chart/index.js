@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Highcharts from 'highcharts';
+import PropTypes from 'prop-types';
+import "./styles.scss";
 
 const Chart = (props) => {
   const [dataByDay, setDataByDay] = useState([]);
@@ -43,7 +45,13 @@ const Chart = (props) => {
         backgroundColor: '#2E2E2E' // Set background color to black
       },
       title: {
-        text: '',
+        text: props.title,
+        align: 'left',
+        style: {
+          color: '#FFF',
+          fontSize: "15px",
+          fontWeight: "400",
+        }
       },
       xAxis: {
         type: 'datetime',
@@ -124,10 +132,30 @@ const Chart = (props) => {
 
 
   return (
-    <div id="chart-container" style={{ width: '100%', height: '100%' }}></div>
+     <div style={{ position: 'relative',  width: '100%', height: '100%' }}>
+     <div  id="chart-container" style={{  height: !props.isHideButton ? '88%' : '100%' }}></div>
+     <div style={{ position: 'absolute', left: '10px', bottom: '10px' }}>
+       {!props.isHideButton && (
+       <div className='chart-button-option'>
+         <button>日</button>
+        <button>週</button>
+        <button>月</button>
+        <button>年</button>
+       </div>
+       )}
+     </div>
+   </div>
   );
 };
 
+Chart.defaultProps = {
+  title: '',
+  isHideButton: false,
+};
 
+Chart.propTypes = {
+  title: PropTypes.string,
+  isHideButton: PropTypes.bool,
+};
 
 export default Chart;

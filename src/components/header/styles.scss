@@ -25,6 +25,11 @@
       span {
         @include font-face( normal, 300, 16px, 23px, $white);
       }
+      &:hover {
+        span {
+          color: $bright-orange-1;
+        }
+      }
     }
   }
 }

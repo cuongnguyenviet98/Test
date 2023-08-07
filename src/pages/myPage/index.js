@@ -4,7 +4,7 @@ import './styles.scss';
 import Chart from '../../components/chart';
 import PieChart from '../../components/pieChart';
 import { DinnerIcon, LunchIcon, MorningIcon, SnackIcon } from '../../static/image/svg';
-import { fakeMeals } from './handle';
+import { fakeMeals } from './handler';
 import ScrollToTopButton from '../../components/scrollToTopButton';
 
 const MyPage = () => {
@@ -27,7 +27,7 @@ const MyPage = () => {
           </div>
         </div>
         <div className='right-my-page'>
-          <Chart />
+          <Chart isHideButton/>
         </div>
       </div>
       <div className='bottom-my-page'>
@@ -55,7 +55,7 @@ const MyPage = () => {
         <button className='more-button' onClick={handleLoadMore}>記録をもっと見る</button>
         </div>
       </div>
-      <ScrollToTopButton className="scroll-to-top-button"/>
+      <ScrollToTopButton/>
     </div>
   );
 };

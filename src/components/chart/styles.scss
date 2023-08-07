@@ -1,0 +1,19 @@
+@import '../../styles/mixins';
+@import '../../styles/custom-variables';
+
+.chart-button-option {
+  button {
+    width: 56px;
+    height: 24px;
+    border-radius: 11px;
+    background: $white;
+    @include font-face(normal, 300, 15px, 22px, $bright-orange);
+    border: unset;
+    margin-right: 16px;
+    cursor: pointer;
+    &:hover {
+      background: $bright-orange;
+      color: $white;
+    }
+  }
+}

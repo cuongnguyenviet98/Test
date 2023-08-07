@@ -43,7 +43,7 @@ const ScrollToTopButton = (props) => {
 };
 
 ScrollToTopButton.defaultProps = {
-  className: '',
+  className: 'scroll-to-top-button',
 };
 
 ScrollToTopButton.propTypes = {
