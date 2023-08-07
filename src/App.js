@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './App.css';
 import Footer from './components/footer';
@@ -13,17 +13,19 @@ const App = () => {
 
   return (
     <div id="container-main-page">
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path="/" component={MyPage} />
-          <Route exact path="/my-record" component={MyRecord} />
-          <Route exact path="/my-column" component={MyColumn} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Router>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={MyPage} />
+            <Route exact path="/my-record" component={MyRecord} />
+            <Route exact path="/my-column" component={MyColumn} />
 
-          <Route component={NotFound} />
-        </Switch>
-        <Footer />
-      </Router>
+            <Route component={NotFound} />
+          </Switch>
+          <Footer />
+        </Router>
+      </Suspense>
     </div>
   )
 }

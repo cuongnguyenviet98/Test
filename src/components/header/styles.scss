@@ -33,3 +33,33 @@
     }
   }
 }
+
+.ant-popover {
+  .ant-popover-arrow {
+    display: none;
+  }
+  .ant-popover-content {
+    .ant-popover-inner {
+      background-color: $gray-base;
+      padding: 0;
+      .ant-popover-inner-content {
+        .box-menu {
+          .item {
+            padding: 0 32px;
+           width: 280px;
+            height: 72px;
+            @include font-face( normal, 300, 18px, 26px, $white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            border-bottom: 1px solid #2E2E2E;
+            &:last-child {
+              border-bottom: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+}
